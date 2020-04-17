@@ -8,7 +8,6 @@ import io.microservices.moviecatalogservice.model.CatalogItem;
 
 public interface MovieCatalogRepository extends CrudRepository<CatalogItem, String> {
 
-	public List<CatalogItem> findByMovieId(String userId);
 	
 	
 }
