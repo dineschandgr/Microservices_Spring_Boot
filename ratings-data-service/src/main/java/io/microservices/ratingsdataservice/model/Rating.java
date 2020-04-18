@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class Rating {
 
 	@Id
-	private String userId;
+	private String userId; 
 	private String movieId;
 	private int rating;
 	
