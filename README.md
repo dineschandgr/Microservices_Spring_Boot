@@ -26,20 +26,16 @@ Requirements :
 4. Open the Port 3306 for your local machine IP
 
 #Use the DB tool Sqlectron
-1. Connect to the first mysql DB MovieCatalogDB. Create a table named movie_catalogue and insert sample data
+1. Connect to the first mysql DB MovieCatalogDB creating from AWS RDS console. Create a table named movie_catalogue and insert sample data
 2. Create a 2nd database named MovieInfoDB. Create a table named movie_info and insert sample data
-3. Create a 3nd database named RatingsDataDB. Create a table named rating_info and insert sample data
+3. Create a 3rd database named RatingsDataDB. Create a table named rating_info and insert sample data
 
-The following configurations must be define in AWS Beanstalk Enviroment variables under software configuration
+#Update the DB credentials and Sever Port in application.properties file for every microservices project
 
-SERVER_PORT : 5000 SPRING_DATASOURCE_URL : AWS RDS MYSQL DB URL spring.datasource.username : username spring.datasource.password : password SPRING_JPA_DATABASE_PLATFORM : org.hibernate.dialect.MySQL8Dialect SPRING_JPA_HIBERNATE_DDL_AUTO : update
-
-#AWS CodeCommit Repo Create a Code Commit Repsitory to Push the Code
-
-#AWS CodeBuild Create a Code Build to build the code
-
-#Create AWS Code Pipeline Create a Code Pipeline to automate the CICD
-
-The Code Pipeline follows the below flow which is auto triggered when the code is pushed to AWS CodeCommit Repo
-
-CodeCommit Repo -> CodeBuild -> AWS Beanstalk (It deploys the Spring Boot Jar file to the EC2 instance)
+1. Start the Discovery Application Server Application first which runs on port 8761
+2. Runs all three microservices which are registered which the Eureka Server
+3. Access http://localhost:8761 to see Eureka Discovery Server console and verify that all 3 microservices are up and registered
+4. Access http://localhost:8081/catalog/user_name to access Movie Catalog Microservice
+5. Access http://localhost:8082/movies/movie_id to access Movie Info Service
+6. Access http://localhost:8083/ratingsdata/user/user_name to access Ratings Data Service
+7. Microservice running on port 8081 consumes the services running on port 8082 and port 8083
