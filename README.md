@@ -1,4 +1,4 @@
-# Microservices_Spring_Boot
+# Microservices Communication and Service Discovery
 Micro Services Application using Spring Boot and Spring Cloud
 
 This Project uses an application for Service Discovery
