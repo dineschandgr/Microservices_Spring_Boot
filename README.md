@@ -38,4 +38,4 @@ Requirements :
 4. Access http://localhost:8081/catalog/user_name to access Movie Catalog Microservice
 5. Access http://localhost:8082/movies/movie_id to access Movie Info Service
 6. Access http://localhost:8083/ratingsdata/user/user_name to access Ratings Data Service
-7. Microservice running on port 8081 consumes the services running on port 8082 and port 8083
+7. Microservice running on port 8081 consumes the services running on port 8082 and port 8083 
