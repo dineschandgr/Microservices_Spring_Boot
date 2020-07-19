@@ -33,7 +33,7 @@ Requirements :
 #Update the DB credentials and Sever Port in application.properties file for every microservices project
 
 1. Start the Discovery Application Server Application first which runs on port 8761
-2. Runs all three microservices which are registered which the Eureka Server
+2. Run all three microservices which are registered which the Eureka Server
 3. Access http://localhost:8761 to see Eureka Discovery Server console and verify that all 3 microservices are up and registered
 4. Access http://localhost:8081/catalog/user_name to access Movie Catalog Microservice
 5. Access http://localhost:8082/movies/movie_id to access Movie Info Service
